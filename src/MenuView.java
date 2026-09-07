@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class MenuView {
-    public static void iniciar() {
+    public void iniciar(MenuController menuController) {
         Scanner entrada = new Scanner(System.in);
         int opcao;
         //exibe opçoes do menu
@@ -11,12 +11,11 @@ public class MenuView {
             System.out.println("3-Créditos");
             System.out.println("4-Saída");
             opcao = entrada.nextInt();
-            MenuController.processamentoOpcao(opcao);
+            menuController.processamentoOpcao(opcao);
+
         } while (opcao != 4);
-        entrada.close();
-
-
     }
+
     public static void exibeCredito(){
         System.out.println("-------Creditos-------\n");
         System.out.println("Felipe Vieira Aquino\n");

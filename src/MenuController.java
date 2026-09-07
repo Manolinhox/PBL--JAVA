@@ -1,8 +1,17 @@
 public  class MenuController {
-    //Processa escolha do menu
-    public static void processamentoOpcao(int opcao){
+    private PersonagemController controller;
+
+    public MenuController(PersonagemController controller){
+        this.controller=controller;
+    }
+
+    //Processa escolha
+    public void processamentoOpcao(int opcao){
         switch(opcao){
-            case 1->CenasView.exibirPrologo();
+            case 1->{
+                CenasView.exibirPrologo();
+                controller.criarPersonagem();
+            }
             case 2->MenuView.exibeInstrucoes();
             case 3->MenuView.exibeCredito();
             case 4->MenuView.saida();
