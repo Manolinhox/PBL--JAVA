@@ -1,3 +1,8 @@
+package Control;
+
+import View.CenasView;
+import View.MenuView;
+
 public  class MenuController {
     private PersonagemController controller;
 
@@ -12,9 +17,9 @@ public  class MenuController {
                 CenasView.exibirPrologo();
                 controller.criarPersonagem();
             }
-            case 2->MenuView.exibeInstrucoes();
-            case 3->MenuView.exibeCredito();
-            case 4->MenuView.saida();
+            case 2-> MenuView.exibeInstrucoes();
+            case 3-> MenuView.exibeCredito();
+            case 4-> MenuView.saida();
             default->System.out.println("Opção invalida!, escolha uma opção válida");
         }
     }

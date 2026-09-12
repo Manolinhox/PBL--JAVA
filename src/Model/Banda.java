@@ -1,3 +1,5 @@
+package Model;
+
 public class Banda {
     private int harmonia = 50;
     private int essencia = 0;

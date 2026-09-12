@@ -1,3 +1,8 @@
+package Control;
+
+import View.CenasView;
+import Model.PersonagemPrincipal;
+
 public class PersonagemController {
     private PersonagemPrincipal personagem;
     private CenasView view;

@@ -1,3 +1,5 @@
+package Model;
+
 public class PersonagemPrincipal {
     String nome = "Toin";
     private int carismaDeBotequim = 0;

@@ -1,3 +1,9 @@
+import Control.MenuController;
+import Control.PersonagemController;
+import Model.PersonagemPrincipal;
+import View.CenasView;
+import View.MenuView;
+
 public class Main{
     public static void main(String[] args){
         //Instancia de Model e da views controller necessarias
