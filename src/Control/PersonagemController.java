@@ -12,16 +12,36 @@ public class PersonagemController {
         this.view = view;
     }
 
-    public void criarPersonagem() {
-        view.exibirCabecalhoEdicao();
+    public void criarPersonagem () {
+        int carisma;
+        int samba;
+        int ouvido;
+        int soma;
 
-        int carisma = view.pedirAtributo("Carisma de botequim");
-        personagem.setCarisma(carisma);
+        do {
+            view.exibirCabecalhoEdicao();
+            view.exibirAvisoRegraPontos();
 
-        int samba = view.pedirAtributo("Samba no pé");
-        personagem.setSamba(samba);
+            carisma = view.pedirAtributo ("Carisma de Botequim");
+            samba = view.pedirAtributo ("Samba no Pé");
+            ouvido = view.pedirAtributo ("Ouvido Absoluto");
 
-        int ouvido = view.pedirAtributo("Ouvido Absoluto");
-        personagem.setOuvido(ouvido);
-    }
+            soma = carisma + samba + ouvido;
+
+            if (soma != 120) {
+                view.exibirErroSomaPontos (soma);
+            }
+            else if (carisma > 100 || samba > 100 || ouvido > 100 || carisma < 0 || samba < 0 || ouvido < 0) {
+                view.exibirErroLimitePontos ();
+                soma = 0;
+            }
+
+        } while (soma != 120);
+
+            personagem.setCarisma (carisma);
+            personagem.setSamba (samba);
+            personagem.setOuvido (ouvido);
+
+            view.exibirSucessoCriacao ();
+        }
 }

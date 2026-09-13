@@ -46,4 +46,21 @@ public class CenasView {
         System.out.println(nomeAtributo + ":");
         return entrada.nextInt();
     }
+
+    public void exibirAvisoRegraPontos() {
+        System.out.println("Aviso - A soma dos 3 atributos deve ser de 120 pontos.");
+        System.out.println("Aviso - Nenhum atributo pode ser menor que 0 ou maior que 100.\n");
+    }
+
+    public void exibirErroSomaPontos(int soma) {
+        System.out.println("\n Aviso - Você distribuiu " + soma + " pontos. O total deve ser 120. Tente novamente!\n");
+    }
+
+    public void exibirErroLimitePontos() {
+        System.out.println("\n Aviso - Os atributos vão de 0 a 100. Tente novamente!\n");
+    }
+
+    public void exibirSucessoCriacao() {
+        System.out.println("\n Personagem criado com sucesso! Sua jornada vai começar...\n");
+    }
 }

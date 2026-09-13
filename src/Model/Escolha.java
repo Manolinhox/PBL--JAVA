@@ -5,14 +5,14 @@ import java.util.function.Consumer;
 public class Escolha {
     private final String texto;
     private final CenasIds destino;
-    private final Consumer<PersonagemPrincipal> efeito;
+    private final Consumer<IntegracaoJogo> efeito;
 
     public Escolha(String texto,CenasIds destino){
         /*construtor  de segurança:para que caso a escolha nao tenha efeito ela seja inicializada
         como null sem precisar passar como parametro*/
         this(texto,destino,null);
     }
-    public Escolha(String texto,CenasIds destino,Consumer<PersonagemPrincipal> efeito){
+    public Escolha(String texto,CenasIds destino,Consumer<IntegracaoJogo> efeito){
         /*Construtor real:icializa todos os parametros*/
         this.texto=texto;
         this.destino=destino;
@@ -30,9 +30,9 @@ public class Escolha {
 
 
     //aplica o efeito colocado no campo
-    public void aplicarEfeito(PersonagemPrincipal p){
+    public void aplicarEfeito(IntegracaoJogo jogo){
         if(efeito!=null){
-            efeito.accept(p);
+            efeito.accept(jogo);
         }
     }
 }

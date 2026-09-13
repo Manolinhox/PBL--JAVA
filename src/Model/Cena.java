@@ -8,33 +8,28 @@ public class Cena {
     public final boolean fim;
     public final CenasIds destinoPadrao;
 
-    //contrutor para cena comum
-    public Cena(CenasIds id, String texto, List<Escolha> escolhas) {
-        this(id, texto, escolhas, false);
+    public Cena(CenasIds id, String texto, List<Escolha> escolhas, boolean fim, CenasIds destinoPadrao) {
+        this.id = id;
+        this.texto = texto;
+        this.escolhas = escolhas;
+        this.fim = fim;
+        this.destinoPadrao = destinoPadrao;
     }
 
-   //Construtor para cena de passagem automática (sem escolhas interativas)
+    public Cena(CenasIds id, String texto, List<Escolha> escolhas) {
+        this(id, texto, escolhas, false, null);
+    }
+
     public Cena(CenasIds id, String texto, CenasIds destinoPadrao) {
         this(id, texto, List.of(), false, destinoPadrao);
     }
 
     public Cena(CenasIds id, String texto, List<Escolha> escolhas, boolean fim) {
-        this.id = id;
-        this.texto = texto;
-        this.escolhas = escolhas;
-        this.fim = fim;
+        this(id, texto, escolhas, fim, null);
     }
 
-    public CenasIds getId() {
-        return id;
-    }
-    public String getTexto() {
-        return texto;
-    }
-    public List<Escolha> getEscolhas() {
-        return escolhas;
-    }
-    public boolean eFim() {
-        return fim;
-    }
+    public CenasIds getId() { return id; }
+    public String getTexto() { return texto; }
+    public List<Escolha> getEscolhas() { return escolhas; }
+    public boolean eFim() { return fim; }
 }

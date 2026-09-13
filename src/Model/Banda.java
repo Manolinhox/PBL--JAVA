@@ -3,22 +3,8 @@ package Model;
 public class Banda {
     private int harmonia = 50;
     private int essencia = 0;
-    private int grana = 0;
+    private double grana = 0.0;
 
-    //Setters
-    public void setHarmonia(int harmonia) {
-        this.harmonia = harmonia;
-    }
-
-    public void setEssencia(int essencia) {
-        this.essencia = essencia;
-    }
-
-    public void setGrana(int grana) {
-        this.grana = grana;
-    }
-
-    //Getters
     public int getHarmonia() {
         return this.harmonia;
     }
@@ -27,7 +13,38 @@ public class Banda {
         return this.essencia;
     }
 
-    public int getGrana() {
+    public double getGrana() {
         return this.grana;
+    }
+
+    public void alterarHarmonia(int valor) {
+        this.harmonia = this.harmonia + valor;
+        if (this.harmonia > 100) {
+            this.harmonia = 100;
+        } else if (this.harmonia < 0) {
+            this.harmonia = 0;
+        }
+    }
+
+    public void alterarEssencia(int valor) {
+        this.essencia = this.essencia + valor;
+        if (this.essencia > 100) {
+            this.essencia = 100;
+        } else if (this.essencia < 0) {
+            this.essencia = 0;
+        }
+    }
+
+    public void adicionarGrana(double valor) {
+        this.grana = this.grana + valor;
+    }
+
+    public boolean debitarGrana(double valor) {
+        if (this.grana >= valor) {
+            this.grana = this.grana - valor;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
