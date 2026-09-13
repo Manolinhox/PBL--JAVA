@@ -1,9 +1,31 @@
 package View;
-
+import Model.Cena;
+import Model.Escolha;
+import java.util.List;
 import java.util.Scanner;
 
+
 public class CenasView {
+
+
     private Scanner entrada = new Scanner(System.in);
+
+    public void exibirCena(Cena cena) {
+        System.out.println("\n" + cena.getTexto());
+        List<Escolha> escolhas = cena.getEscolhas();
+        for (int i = 0; i < escolhas.size(); i++) {
+            System.out.println((i + 1) + " - " + escolhas.get(i).getTexto());
+        }
+    }
+
+    public int pedirEscolha(int max) {
+        int opcao;
+        do {
+            System.out.print("Escolha uma opção: ");
+            opcao = entrada.nextInt();
+        } while (opcao < 1 || opcao >    max);
+        return opcao;
+    }
 
     public static void exibirPrologo() {
         System.out.println("A vida em Feira de Santana pesava nos ombros de Toin. " +

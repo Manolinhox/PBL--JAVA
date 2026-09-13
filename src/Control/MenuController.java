@@ -4,10 +4,13 @@ import View.CenasView;
 import View.MenuView;
 
 public  class MenuController {
-    private PersonagemController controller;
+    private final PersonagemController controller;
+    private final CenasController cenasController;
 
-    public MenuController(PersonagemController controller){
+    public MenuController(PersonagemController controller,CenasController cenasController){
+
         this.controller=controller;
+        this.cenasController=cenasController;
     }
 
     //Processa escolha
@@ -16,6 +19,8 @@ public  class MenuController {
             case 1->{
                 CenasView.exibirPrologo();
                 controller.criarPersonagem();
+                cenasController.jogar();
+
             }
             case 2-> MenuView.exibeInstrucoes();
             case 3-> MenuView.exibeCredito();
